@@ -1,4 +1,5 @@
-#pragma onece
+#ifndef BIT_MATH_HPP
+#define BIT_MATH_HPP
 #include<cstdint>
 
 
@@ -43,3 +44,5 @@ public:
         *Address = RegValue;
     }
 };
+
+#endif

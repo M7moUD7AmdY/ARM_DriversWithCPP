@@ -1,6 +1,5 @@
-
 #include "RCC.hpp"
-#include "../../Services/Bit_Math.hpp"
+#include "../GPIO/GPIO.hpp"
 
 template<typename T>
 void RCC<T>::RCC_InitSysClock()
@@ -8,21 +7,17 @@ void RCC<T>::RCC_InitSysClock()
 }
 
 template<typename T>
-void RCC<T>::RCC_Enable_clock( T& peripheral)
+void RCC<T>::RCC_Enable_clock(T& peripheral)
 {
-    // Enable clock
-    Register32(peripheral.GetReg());
-    Register32::set(peripheral.GetBit());
+    Register32 Register(peripheral.GetReg());
+    Register.set(peripheral.GetBit());
 }
 
 template<typename T>
-void RCC<T>::RCC_Disable_clock( T& peripheral)
+void RCC<T>::RCC_Disable_clock(T& peripheral)
 {
-    // Disable clock
-    Register32(peripheral.GetReg());
-    Register32::clear(peripheral.GetBit());
-
+    Register32 Register(peripheral.GetReg());
+    Register.clear(peripheral.GetBit());
 }
 
-
-
+template class RCC<GPIO>;

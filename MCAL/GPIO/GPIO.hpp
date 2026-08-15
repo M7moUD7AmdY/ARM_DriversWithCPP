@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Platform/STM32F103/RCC_MemoryMap.hpp"
+#include "../../Platform/STM32F103/GPIO_MemoryMap.hpp"
 #include "../../Services/Bit_Math.hpp"
 #include <cstdint>
 
@@ -95,7 +96,7 @@ public:
 
     int GetBit() const;
 
-    void SetMode(Pin_t Pin, PinMode Mode);
+    void SetMode(Pin_t Pin, GPIO_Mode Mode);
 
     void SetPin(Pin_t Pin);
 

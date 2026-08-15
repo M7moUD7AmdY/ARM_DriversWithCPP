@@ -1,7 +1,5 @@
 #include "../../Platform/STM32F103/RCC_MemoryMap.hpp"
 #include "../../Platform/STM32F103/GPIO_MemoryMap.hpp"
-
-#include "../../Services/Bit_Math.hpp"
 #include "GPIO.hpp"
 
 GPIO::GPIO() : GPIOport{0, 0}
@@ -75,7 +73,7 @@ int GPIO::GetBit() const
     return GPIOport.RCC_reg;
 }
 
-void GPIO::SetMode(Pin_t Pin, PinMode Mode)
+void GPIO::SetMode(Pin_t Pin, GPIO_Mode Mode)
 {
     uint32_t PinNumber = static_cast<uint32_t>(Pin);
     uint32_t Shift = (PinNumber % 8U) * 4U;
