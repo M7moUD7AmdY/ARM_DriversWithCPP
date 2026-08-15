@@ -2,32 +2,44 @@
 #include<cstdint>
 
 
-
-
-template<uintptr_t Address>
 class Register32
 {
+private:
+    volatile uint32_t* Address;
+
 public:
-    static uint32_t read()
+    Register32(uintptr_t Address)
+        : Address(reinterpret_cast<volatile uint32_t*>(Address))
     {
-        return *reinterpret_cast<volatile uint32_t*>(Address);
     }
-    static void write(uint32_t value)
-    {   
-        *reinterpret_cast<volatile uint32_t*>(Address)=value;
-    }
-    static void set(uint32_t bit)
-    {
-        *reinterpret_cast<volatile uint32_t*>(Address)|=(1<<bit);
-    }
-    static void clear(uint32_t bit)
-    {
-        *reinterpret_cast<volatile uint32_t*>(Address) &=(1<<bit);
 
-    }
-    static void toggle(uint32_t bit)
+    void set(uint32_t Bit)
     {
-        *reinterpret_cast<volatile uint32_t*>(Address) ^=(1<<bit);
+        *Address |= (1UL << Bit);
+    }
 
+    void clear(uint32_t Bit)
+    {
+        *Address &= ~(1UL << Bit);
+    }
+
+    bool read(uint32_t Bit) const
+    {
+        return (*Address & (1UL << Bit)) != 0U;
+    }
+
+    void write(uint32_t Value)
+    {
+        *Address = Value;
+    }
+
+    void modify(uint32_t Mask, uint32_t Value)
+    {
+        uint32_t RegValue = *Address;
+
+        RegValue &= ~Mask;
+        RegValue |= (Value & Mask);
+
+        *Address = RegValue;
     }
 };
