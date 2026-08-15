@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace GPIO
+namespace GPIOReg
 {
     // ============================================================
     // GPIO Base Addresses
@@ -84,74 +84,4 @@ namespace GPIO
     }
 
 
-    // ============================================================
-    // GPIOD Registers
-    // ============================================================
-
-    namespace GPIOD
-    {
-        constexpr uintptr_t BASE = GPIOD_BASE;
-
-        constexpr uintptr_t CRL  = BASE + CRL_OFFSET;
-        constexpr uintptr_t CRH  = BASE + CRH_OFFSET;
-        constexpr uintptr_t IDR  = BASE + IDR_OFFSET;
-        constexpr uintptr_t ODR  = BASE + ODR_OFFSET;
-        constexpr uintptr_t BSRR = BASE + BSRR_OFFSET;
-        constexpr uintptr_t BRR  = BASE + BRR_OFFSET;
-        constexpr uintptr_t LCKR = BASE + LCKR_OFFSET;
-    }
-
-
-    // ============================================================
-    // GPIOE Registers
-    // ============================================================
-
-    namespace GPIOE
-    {
-        constexpr uintptr_t BASE = GPIOE_BASE;
-
-        constexpr uintptr_t CRL  = BASE + CRL_OFFSET;
-        constexpr uintptr_t CRH  = BASE + CRH_OFFSET;
-        constexpr uintptr_t IDR  = BASE + IDR_OFFSET;
-        constexpr uintptr_t ODR  = BASE + ODR_OFFSET;
-        constexpr uintptr_t BSRR = BASE + BSRR_OFFSET;
-        constexpr uintptr_t BRR  = BASE + BRR_OFFSET;
-        constexpr uintptr_t LCKR = BASE + LCKR_OFFSET;
-    }
-
-
-    // ============================================================
-    // GPIOF Registers
-    // ============================================================
-
-    namespace GPIOF
-    {
-        constexpr uintptr_t BASE = GPIOF_BASE;
-
-        constexpr uintptr_t CRL  = BASE + CRL_OFFSET;
-        constexpr uintptr_t CRH  = BASE + CRH_OFFSET;
-        constexpr uintptr_t IDR  = BASE + IDR_OFFSET;
-        constexpr uintptr_t ODR  = BASE + ODR_OFFSET;
-        constexpr uintptr_t BSRR = BASE + BSRR_OFFSET;
-        constexpr uintptr_t BRR  = BASE + BRR_OFFSET;
-        constexpr uintptr_t LCKR = BASE + LCKR_OFFSET;
-    }
-
-
-    // ============================================================
-    // GPIOG Registers
-    // ============================================================
-
-    namespace GPIOG
-    {
-        constexpr uintptr_t BASE = GPIOG_BASE;
-
-        constexpr uintptr_t CRL  = BASE + CRL_OFFSET;
-        constexpr uintptr_t CRH  = BASE + CRH_OFFSET;
-        constexpr uintptr_t IDR  = BASE + IDR_OFFSET;
-        constexpr uintptr_t ODR  = BASE + ODR_OFFSET;
-        constexpr uintptr_t BSRR = BASE + BSRR_OFFSET;
-        constexpr uintptr_t BRR  = BASE + BRR_OFFSET;
-        constexpr uintptr_t LCKR = BASE + LCKR_OFFSET;
-    }
 }
